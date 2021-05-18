@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/all.css">
+    <link rel="stylesheet" href="CSS/order.css">
+    <link rel="stylesheet" href="CSS\loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.angularjs.org/1.4.0-rc.1/angular.js"></script>
+    <style>
+      .container-box{
+        display: block;
+        font-family: monospace;
+      }
+      .inner1{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .photo img{
+        border-radius: 100%;
+        height: 40vw;
+        margin-top: 2vh;
+      }
+      .photo{
+        width: 30%;
+      }
+
+      .info{
+        width: 60%;
+        padding: 0px 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .maps iframe{
+        display: block;
+        position: relative;
+      }
+      .maps{
+        margin-top: 5vh;
+        padding-top: 2vh;
+        border-top: black solid 5px;
+        padding: 0 2%;
+      }
+      #Before-Footer{
+        position: relative;
+        margin-top: 2vh;
+        padding: 0 2%;
+      }
+
+      @media screen and (max-width:1109px) {
+        .disp{
+          display: none;
+        }
+        .inner1{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .photo{
+          width: 100%;
+          text-align: center;
+        }
+        .photo img{
+          height: 70vw;
+        }
+        .info{
+          margin-top: 2vh;
+          width: 100%;
+          padding: 0px 5%;
+        }
+      }
+      footer{
+        position: relative;
+      }
+      #Before-Footer{
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="loader hidden"><img src="Images\Reload-1s-200px.svg" alt="loader"/>
+  </div>
+    <header id="head">
+      <nav>
+        <div class="nav-links">
+          <li><a href="./">Home</a></li>
+          <li class="current"><a href="stats.html">Stats</a></li>
+          <li><a href="catalogues.html">Catalogues</a></li>
+          <li><a href="getourmerch.html">Get Our Merch</a></li>
+          <li><a href="aboutus.html">AboutUS</a></li>
+        </div>
+
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+
+      </nav>
+    </header>
+
+    <section>
+      <div class="container-box">
+        <div class="inner1">
+          <div class="photo"> <img src="Images\aboutUs\ishanPic.jpg" alt="my pic"></div>
+          <div class="info">
+            <h1>Ishan Kulkarni</h1>
+            <p><b>Field of Study:</b> B.Tech Information Technology</p>
+            <p><b>Interests: </b>Machine Learning, Web Development, Data Science, Mathematics</p>
+            <p><b>Email me at: </b> <a href="mailto:ishanak1602@gmail.com">ishanak1602@gmail.com</a></p>
+          </div>
+        </div>
+        
+        <div class="maps">
+          <h1>Locate me at:</h1><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d564.6720008841145!2d72.85811894880737!3d19.038543814789154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9326a14ad99%3A0x55fd49716a02e5e0!2sSiddha%20Sadan!5e0!3m2!1sen!2sin!4v1621356381004!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+      </div>
+    </section>
+    <section class='disp'><br><br><br></section>
+    <section>
+    <div id="Before-Footer">
+      <details>
+        <summary>Feedback</summary>
+        <div  ng-app="validationApp" ng-controller="mainController">
+            <div class="container">
+              <form name="form.userForm" ng-submit="submitForm()" novalidate method="POST">
+            <div class="modal-body">
+                <!-- NAME -->
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" ng-model="name" required>
+                    <p style="margin-top:10px;" ng-show="form.userForm.name.$invalid && !form.userForm.name.$pristine " class="help-block alert alert-danger"><i class="fa fa-exclamation-circle"></i> You name is required.</p>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" ng-model="email" required>
+                    <p  style="margin-top:10px;" ng-show="form.userForm.email.$invalid && !form.userForm.email.$pristine" class="help-block alert alert-danger"><i class="fa fa-exclamation-circle"></i> Enter a valid email.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Feedback</label>
+                    <textarea style="resize: none;" rows="8" cols="80" name="username" class="form-control" ng-model="user.username" ng-minlength="3"required></textarea>
+                    <p  style="margin-top:10px;" ng-show="form.userForm.username.$error.minlength" class="help-block alert alert-danger"><i class="fa fa-exclamation-circle"></i> Feedback is too short.</p>
+                    <p style="margin-top:10px;" ng-show="(form.userForm.username.$invalid && !form.userForm.username.$pristine) && !form.userForm.username.$error.minlength" class="help-block alert alert-danger"><i class="fa fa-exclamation-circle"></i> Form cannot be empty</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" ng-disabled="form.userForm.$invalid">OK</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </form>
+            </div>
+        </div>
+        </details>
+        </div>
+      </section>
+      <br/><br/>
+      <footer>
+        <div class="footer">
+          <div id="outer-footer" class="inner-footer">
+            <h4>Subscribe</h4>
+            <div class="signupBox">
+             <input type="email"  id="signup1" name="email" placeholder=" enter your email address" autocomplete="on">
+              <input id="signup2" type="submit" value="Subscribe" onclick="return checkEmail();">
+            </div>
+            <br/>
+
+            <div class = "social">
+              <a href='https://www.facebook.com' target="_blank"><img src="Images\social-logos\facebook.png"></a>
+              <a href='https://www.instagram.com' target="_blank"><img src="Images\social-logos\instagram.png"></a>
+              <a href='https://www.twitter.com' target="_blank"><img src="Images\social-logos\twitter.png"></a>
+              <a href='https://www.youtube.com' target="_blank"><img src="Images\social-logos\youtube.png"></a>
+            </div>
+          </div>
+          <div id ="news" class="inner-footer">
+            <h4>Recent Posts</h4>
+            <a href="https://www.timesnownews.com/auto/car-news/article/maruti-suzuki-swift-2021-india-launch-in-two-weeks/715842" target="_blank">Maruti Suzuki Swift 2021 India launch in two weeks</a></p>
+            <a href="https://www.indiacarnews.com/news/hyundai-creta-7-seater-launch-in-april-2021-report-44087/" target="_blank">Hyundai Creta 7-Seater Launch In April 2021</a>
+            <a href="https://motoroctane.com/news/214012-indian-tesla-model-3" target="_blank"><p>3 unique features on Indian Tesla Model 3</a>
+          </div>
+          <div id='navigate' class="inner-footer">
+            <h4>Navigate</h4>
+              <a href="index.html">Home &#10097;</a>
+              <a href="stats.html">Stats &#10097;</a>
+              <a href="catalogues.html">Catalogues &#10097;</a>
+              <a href="getourmerch.html">Get Our Merch &#10097;</a>
+              <a href="aboutus.html">AboutUS &#10097;</a>
+          </div>
+        </div>
+
+        <div class="final">Copyright &copy; 2021 - Website designed by Ishan Kulkarni. All Rights Reserved </div>
+      </footer>
+    <script type="text/javascript" src='JS\app.js'>  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
