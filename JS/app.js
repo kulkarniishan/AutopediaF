@@ -49,6 +49,7 @@ if(!(/((\+){1}91){1}[1-9]{1}[0-9]{9}$/).test(document.getElementById('phone').va
     return false;
   }
   alert("Form Submitted");
+  document.querySelector('.popup').style.display= 'none';
   return true;
 }
 

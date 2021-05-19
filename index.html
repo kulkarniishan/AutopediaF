@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="CSS/all.css">
     <link rel="stylesheet" href="CSS/order.css">
     <link rel="stylesheet" href="CSS\loader.css">
+    <link rel="stylesheet" href="CSS/modernTimeline.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <script src="https://code.angularjs.org/1.4.0-rc.1/angular.js"></script>
   </head>
   <body>
@@ -17,7 +19,7 @@
     <header id="head">
       <nav>
         <div class="nav-links">
-          <li class="current"><a href="./">Home</a></li>
+          <li class="current"><a href="#">Home</a></li>
           <li><a href="stats.html">Stats</a></li>
           <li><a href="catalogues.html">Catalogues</a></li>
           <li><a href="getourmerch.html">Get Our Merch</a></li>
@@ -103,19 +105,130 @@
     </div>
     </section>
 
-    <section class="History">
-      <h2>History</h2>
-      <div class="line"></div>
-      <div>
-        <h3>1886</h3>
-        <img src = "Images\History\benz-patent-motorwagen-w1024xh512-cutout.png">
-        <p>
-          The first stationary gasoline engine developed by Carl Benz was a one-cylinder two-stroke unit which ran for the first time on New Year’s Eve 1879. Benz had so much commercial success with this engine that he was able to devote more time to his dream of creating a lightweight car powered by a gasoline engine, in which the chassis and engine formed a single unit.
-        </p>
-      </div>
+      	
+<div>
+	<h2 class="historyHead">History</h2>
+  <div class="line"></div>
+<br> 
+<div class="process-wrapper">
+<div id="progress-bar-container">
+	<ul>
+		<li class="step step01 active"><div class="step-inner">17<sup>th</sup> centruy</div></li>
+		<li class="step step02"><div class="step-inner">18<sup>th</sup> century</div></li>
+		<li class="step step03"><div class="step-inner">19<sup>th</sup> century</div></li>
+		<li class="step step04"><div class="step-inner">20<sup>th</sup> century</div></li>
+		<li class="step step05"><div class="step-inner">21<sup>st</sup> century</div></li>
+	</ul>
+	
+	<div id="line">
+		<div id="line-progress"></div>
+	</div>
+</div>
+
+<div id="progress-content-section">
+	<div class="section-content discovery active">
+		<h2>First Idea</h2>
+		<div class="steps">
+			<div class="number1">
+				<p>Ferdinand Verbiest, a member of a Jesuit mission in China, built a steam-powered vehicle around 1672 as a toy for the Kangxi Emperor. It was small-scale and could not carry a driver but it was, quite possibly, the first working steam-powered vehicle</p>
+				</div>
+				<div class="number2">
+					<img src="../Images/History/17thCentury.jpg" alt="car"/>
+				</div>	
+		</div>
+	</div>
+	
+	<div class="section-content strategy">
+		<h2>Gets More Efficient</h2>
+		<div class="steps">
+			<div class="number1">
+				<p>By 1784, William Murdoch had built a working model of a steam carriage in Redruth and in 1801 Richard Trevithick was running a full-sized vehicle on the roads in Camborne. The first automobile patent in the United States was granted to Oliver Evans on May 3, 1789.</p>
+			</div>
+			<div class="number2">
+				<img src="../Images/History/18thCentury.jpg" alt="car"/>
+			</div>	
+		</div>
+	</div>
+	
+	<div class="section-content creative">
+		<h2>Rise of Gasoline Cars</h2>
+		<div class="steps">
+			<div class="number1">
+				<p>The first stationary gasoline engine developed by Carl Benz was a one-cylinder two-stroke unit which ran for the first time on New Year’s Eve 1879. Benz had so much commercial success with this engine that he was able to devote more time to his dream of creating a lightweight car powered by a gasoline engine, in which the chassis and engine formed a single unit.</p>			
+			</div>
+			<div class="number2">
+				<img src="../Images/History/benz-patent-motorwagen-w1024xh512-cutout.png" alt="car"/>
+			</div>	
+		</div>
+	</div>
+	
+	<div class="section-content production">
+		<h2>Electric Cars enter the race</h2>
+		<div class="steps">
+			<div class="number1">
+				<p>Electric cars enjoyed popularity between the late 19th century and early 20th century, when electricity was among the preferred methods for automobile propulsion, providing a level of comfort and ease of operation that could not be achieved by the gasoline cars of the time. Advances in internal combustion technology, especially the electric starter, soon rendered this advantage moot; the greater range of gasoline cars, quicker refueling times, and growing petroleum infrastructure, along with the mass production of gasoline vehicles by companies such as the Ford Motor Company, which reduced prices of gasoline cars to less than half that of equivalent electric cars, led to a decline in the use of electric propulsion, effectively removing it from important markets such as the United States by the 1930s. </p>
+			</div>
+			<div class="number2">
+				<img src="../Images/History/20thCentury.jpg" alt="car"/>
+			</div>	
+		</div>
+	</div>
+	
+	<div class="section-content analysis">
+		<h2>Modern Era</h2>
+		<div class="steps">
+			<div class="number1">
+				<p>	In recent years, increased concerns over the environmental impact of gasoline cars, higher gasoline prices, improvements in battery technology, and the prospect of peak oil have brought about renewed interest in electric cars, which are perceived to be more environmentally friendly and cheaper to maintain and run, despite high initial costs.</p>
+			</div>
+			<div class="number2">
+				<img src="../Images/History/21stCentury.jpg" alt="car"/>
+			</div>	
+		</div>
+	</div>
+	</div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script>
+    
+    $(".step").click( function() {
+	$(this).addClass("active").prevAll().addClass("active");
+	$(this).nextAll().removeClass("active");
+});
+
+$(".step01").click( function() {
+	$("#line-progress").css("width", "3%");
+	$(".discovery").addClass("active").siblings().removeClass("active");
+});
+
+$(".step02").click( function() {
+	$("#line-progress").css("width", "25%");
+	$(".strategy").addClass("active").siblings().removeClass("active");
+});
+
+$(".step03").click( function() {
+	$("#line-progress").css("width", "50%");
+	$(".creative").addClass("active").siblings().removeClass("active");
+});
+
+$(".step04").click( function() {
+	$("#line-progress").css("width", "75%");
+	$(".production").addClass("active").siblings().removeClass("active");
+});
+
+$(".step05").click( function() {
+	$("#line-progress").css("width", "100%");
+	$(".analysis").addClass("active").siblings().removeClass("active");
+});
+
+ 
+    </script>
     </section>
     <section>
-      <br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/>
     <div id="Before-Footer">
       <details>
         <summary>Feedback</summary>
@@ -180,7 +293,7 @@
           </div>
           <div id='navigate' class="inner-footer">
             <h4>Navigate</h4>
-              <a href="index.html">Home &#10097;</a>
+              <a href="#">Home &#10097;</a>
               <a href="stats.html">Stats &#10097;</a>
               <a href="catalogues.html">Catalogues &#10097;</a>
               <a href="getourmerch.html">Get Our Merch &#10097;</a>
@@ -188,7 +301,8 @@
           </div>
         </div>
 
-        <div class="final">Copyright &copy; 2021 - Website designed by Ishan Kulkarni. All Rights Reserved </div>
+        <div class="final">Copyright &copy; 2021 - Website designed with	
+          &#9829; by Ishan Kulkarni. All Rights Reserved </div>
       </footer>
     <script type="text/javascript" src='JS\app.js'>  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

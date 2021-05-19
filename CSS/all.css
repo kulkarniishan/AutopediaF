@@ -368,12 +368,6 @@ header li a{
   font-size: 200%;
 }
 
-section.History{
-  margin: 100px 0px;
-  display: block;
-  float: left;
-  padding: 0% 2%;
-}
 
 .History h2{
   text-align: Center;
@@ -383,39 +377,12 @@ section.History{
   font-variant:small-caps;
 }
 
-.History h3{
-  text-align: Center;
-  font-size: 270%;
-  font-family: monospace;
-  letter-spacing: 10px;
-}
-
-.History .line{
+.line{
   width: 70%;
   border-top: rgba(0,0,0,0.5) solid;
   margin: 0% 15%;
-  margin-bottom: 20px;
 }
 
-.History img{
-  float:left;
-  width:50%;
-  margin-right: 2%;
-  margin-left: 2%;
-  border-radius: 10px;
-  transition: transform 0.7s;
-  border: black solid;
-}
-
-
-.History img:hover{
-  transform: scale(1.05);
-  z-index: 99;
-}
-.History div p{
-  font-size: 150%;
-  font-family: cursive;
-}
 
 #Before-footer{
   border: bold black 200px;
@@ -640,10 +607,6 @@ footer{
   font-size: 150%;
   border-radius: 7.5px;
   border: #922B21 solid;
-}
-
-.History p::first-letter{
-  font-size:200%;
 }
 
 
